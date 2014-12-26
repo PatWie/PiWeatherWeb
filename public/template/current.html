@@ -1,0 +1,90 @@
+<h2>Aktuell <small>({{date}})</small></h2>
+<div class="row">
+    <div class="col-md-4">
+        <div class="widget widget-default widget-carousel">
+            <div class="owl-carousel" id="owl-example2">
+                <div>
+                    <div class="widget-item-left">
+                        <span class="wi wi-thermometer "></span>
+                    </div>
+                    <div class="widget-data">
+                        <div class="widget-subtitle">Außen-Temperatur</div>
+                        <div class="widget-int">{{temperature}} °C</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="widget-item-left">
+                        <span class="wi wi-sprinkles "></span>
+                    </div>
+                    <div class="widget-data">
+                        <div class="widget-subtitle">Luftfeuchtigkeit</div>
+                        <div class="widget-int">{{huminity}} %</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="widget-item-left">
+                        <span class="wi wi-tornado "></span>
+                    </div>
+                    <div class="widget-data">
+                        <div class="widget-subtitle">Wingeschwindikeit</div>
+                        <div class="widget-int">{{windspeed}} m/s</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="widget-item-left">
+                        <span class="wi wi-cloud-down "></span>
+                    </div>
+                    <div class="widget-data">
+                        <div class="widget-subtitle">Luftdruck</div>
+                        <div class="widget-int">{{airpressure}} mBar</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="widget-item-left">
+                        <span class="wi wi-day-sunny "></span>
+                    </div>
+                    <div class="widget-data">
+                        <div class="widget-subtitle">UV index</div>
+                        <div class="widget-int">Index {{uv}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="widget widget-default widget-carousel">
+            <div class="owl-carousel" id="owl-example">
+                <div>
+                    <div class="widget-title">Rekord min. Temperatur</div>
+                    <div class="widget-subtitle">{{temp_min_date}}</div>
+                    <div class="widget-int">{{temp_min}} °C</div>
+                </div>
+                <div>
+                    <div class="widget-title">Rekord max. Temperatur</div>
+                    <div class="widget-subtitle">{{temp_max_date}}</div>
+                    <div class="widget-int">{{temp_max}} °C</div>
+                </div>
+                <div>
+                    <div class="widget-title">durch. Temperatur</div>
+                    <div class="widget-int">{{temp_avg}} °C</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-md-4"> 
+        <div class="widget widget-default widget-item-icon">
+            <div class="widget-item-left">
+                <span class="fa fa-wifi"></span>
+            </div>
+            <div class="widget-data">
+                <div class="widget-title">Sensoren
+                </div>
+                <div class="widget-subtitle">
+                    Innen.Temp <i class="fa fa-check"></i><br>
+                    Aussen.Temp <i class="fa fa-check"></i><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
