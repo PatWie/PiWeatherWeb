@@ -1,0 +1,12 @@
+<?php
+
+define("LOCATION", '/var/www/weather/');
+define("WEBPATH", '/public/');
+define("SECRET", 'dummydata');
+
+$TFA_LABEL = array(
+	0 => 'zeit', 1 => 'InnenTemp.', 2 => 'H0', 3 => 'AussenTemp.', 4 => 'Luftfeuchtigkeit', 
+	5 => 'T2', 6 => 'H2', 7 => 'T3', 8 => 'H3', 9 => 'T4', 10 => 'H4', 11 => 'T5', 12 => 'H5', 
+	13 => 'PRESS', 14 => 'UV', 15 => 'FC', 
+	16 => 'STORM', 17 => 'WD', 18 => 'Windgeschw. m/s', 19 => 'WG', 20 => 'WC', 21 => 'RC');
+

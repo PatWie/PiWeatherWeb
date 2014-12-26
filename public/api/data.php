@@ -41,10 +41,9 @@ class AVG{
 
 
 $endTime    = (isset($_GET['e']) && ($_GET['e']!='')) ? $_GET['e'] : time();
-$endTime    = 1417388341-60*60*4-26*60;
 $mode = (isset($_GET['m']) && ($_GET['m']!='')) ? $_GET['m'] : 2;
 $startTime = $endTime-$interval[$mode][0];
-$startTime = ((int)($startTime/60/60))*60*60;
+$startTime = ((int)($startTime/60))*60;
 $sensors    = (isset($_GET['t'])) ? explode(':',$_GET['t']) : explode(':','T1');
 $resolution = $interval[$mode][1];
 
@@ -72,9 +71,9 @@ for ($i = 0; $i <= $numDays; $i++) {
 			$TS = ((int)($parts[0]/60))*60;
 			$parts[0] = $TS;
 			// check bounds
-			if( $TS > $endTime) 
+			if( $TS > $endTime)
 				break;
-			if( $TS < $startTime) 
+			if( $TS < $startTime)
 				continue;
 			// compute daily average
 			$daily_average->add($parts);
@@ -88,7 +87,6 @@ for ($i = 0; $i <= $numDays; $i++) {
 				$interval_average->add($parts);
 				continue;
 			}
-			
 			$arr = $interval_average->get();
 			$arr[0] = round((int)$parts[0]/60 ,0)*60;
 			if($first){
@@ -96,7 +94,7 @@ for ($i = 0; $i <= $numDays; $i++) {
 				continue;
 			}
 			$DisplayChart->add($arr);
-		}	
+		}
 	}
 }
 

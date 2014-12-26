@@ -41,4 +41,10 @@ echo "ADD TO FILE:       ".$filename.PHP_EOL;
 if(!file_exists($filename))
 		touch($filename);
 file_put_contents($filename,$q.PHP_EOL,FILE_APPEND);
-	file_put_contents("../data/last_ts.dat",$q);
+$filename = dataPath('last.dat');
+echo "
+".$filename."
+";
+$filenameip = dataPath('ip.dat');
+file_put_contents($filename,$q);
+file_put_contents($filenameip,$_SERVER['REMOTE_ADDR']);

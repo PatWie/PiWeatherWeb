@@ -1,0 +1,23 @@
+# we use a whitelist
+*.*
+# allow
+!.gitignore
+!*.php
+!*.php_backup
+!*.html
+!*.css
+!*.js
+!*.png
+# fonts
+!*.otf
+!*.eot
+!*.svg
+!*.ttf
+!*.wolff
+# stuff
+!*.md
+!*.sh
+config.user.php
+local/*
+station/*
+
