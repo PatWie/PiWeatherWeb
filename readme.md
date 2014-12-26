@@ -11,3 +11,6 @@ The last step can be done  by
 
 	chown www-data:www-data -R data
 	chmod u+w -R data
+
+###screenshot
+![screenshot](https://raw.githubusercontent.com/PatWie/PiWeatherWeb/master/preview.png)
