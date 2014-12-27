@@ -3,10 +3,10 @@ header('Content-Type: application/json');
 include_once '../../config.system.php';
 
 $interval = array(
-	array(60*60,    60*5),   // last hour -> every 5 minutes
-	array(60*60*12, 60*30),  // last 12 hour -> every 30 minutes
-	array(60*60*24, 60*60),  // last 24 hour -> every 60 minutes
-	array(60*60*24*3, 60*60*2),  // last 3 days -> every 120 minutes
+	array(60*60*6,    60*5),   // last  6 hour -> every 5 minutes
+	array(60*60*12, 60*10),  // last 24 hour -> every 60 minutes
+    array(60*60*24, 60*30),  // last 24 hour -> every 60 minutes
+	array(60*60*24*3, 60*60),  // last 3 days -> every 120 minutes
 	array(60*60*24*7, 60*60*6),  // last 7 days -> every 120 minutes
 	array(60*60*24*30, 60*60*12),  // last 30 days -> every 480 minutes
 );
@@ -41,7 +41,9 @@ class AVG{
 
 
 $endTime    = (isset($_GET['e']) && ($_GET['e']!='')) ? $_GET['e'] : time();
-$mode = (isset($_GET['m']) && ($_GET['m']!='')) ? $_GET['m'] : 2;
+if(isset($local))
+    $endTime = 1417386841;
+$mode = (isset($_GET['m']) && ($_GET['m']!='')) ? $_GET['m']-1 : 0;
 $startTime = $endTime-$interval[$mode][0];
 $startTime = ((int)($startTime/60))*60;
 $sensors    = (isset($_GET['t'])) ? explode(':',$_GET['t']) : explode(':','T1');
@@ -77,13 +79,14 @@ for ($i = 0; $i <= $numDays; $i++) {
 				continue;
 			// compute daily average
 			$daily_average->add($parts);
-			if($TS%(60*60*24)===0){
+			if(($TS+60*60)%(60*60*24)===0){
 				$arr = $daily_average->get();
 				$arr[0] = round((int)$parts[0]/60 ,0)*60;
 				$DayChart->add($arr);
 			}
 			// handle display data
-			if($TS%$resolution!=0){
+            #echo $resolution."-----".$TS%$resolution."\n";
+			if(($TS+60*60)%$resolution!=0){
 				$interval_average->add($parts);
 				continue;
 			}
@@ -97,5 +100,4 @@ for ($i = 0; $i <= $numDays; $i++) {
 		}
 	}
 }
-
 echo json_encode($DisplayChart->getData($sensors));

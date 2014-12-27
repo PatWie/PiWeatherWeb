@@ -62,7 +62,7 @@ function createChartTemplate($title,$id){
 	return '<div class="col-md-6">            
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">'.$title.' (<span class="time">letzten 24h</span>)</h3>
+            <h3 class="panel-title">'.$title.' (<span class="time">letzten 24 Stunden</span>)</h3>
         </div>
         <div class="panel-body">
             <div id="'.$id.'" style="height: 300px;">
