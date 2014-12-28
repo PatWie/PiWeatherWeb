@@ -43,7 +43,7 @@ class AVG{
 $endTime    = (isset($_GET['e']) && ($_GET['e']!='')) ? $_GET['e'] : time();
 if(isset($local))
     $endTime = 1417386841;
-$mode = (isset($_GET['m']) && ($_GET['m']!='')) ? $_GET['m']-1 : 0;
+$mode = (isset($_GET['m']) && ($_GET['m']!='')) ? $_GET['m']-1 : 1;
 $startTime = $endTime-$interval[$mode][0];
 $startTime = ((int)($startTime/60))*60;
 $sensors    = (isset($_GET['t'])) ? explode(':',$_GET['t']) : explode(':','T1');

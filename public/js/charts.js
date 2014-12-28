@@ -178,12 +178,12 @@ var nvd3Charts = function() {
         init: function(mode) {
             mode = mode || 3;
             console.log(mode);
+            startCharTemperatureIndoor(mode);
+            startCharHumidityIndoor(mode);
             startCharTemperature(mode);
             startCharHumidity(mode);
             startCharWindspeed(mode);
             startCharUv(mode);
-            startCharTemperatureIndoor(mode);
-            startCharHumidityIndoor(mode);
         }
     };
 }();

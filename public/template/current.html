@@ -14,6 +14,15 @@
                 </div>
                 <div>
                     <div class="widget-item-left">
+                        <span class="wi wi-thermometer "></span>
+                    </div>
+                    <div class="widget-data">
+                        <div class="widget-subtitle">Innen-Temperatur</div>
+                        <div class="widget-int">{{temperatureIndoor}} °C</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="widget-item-left">
                         <span class="wi wi-sprinkles "></span>
                     </div>
                     <div class="widget-data">
@@ -81,8 +90,8 @@
                 <div class="widget-title">Sensoren
                 </div>
                 <div class="widget-subtitle">
-                    Innen.Temp <i class="fa fa-check"></i><br>
-                    Aussen.Temp <i class="fa fa-check"></i><br>
+                    Innen.Temp <i class="fa fa-{{testindoor}}"></i><br>
+                    Aussen.Temp <i class="fa fa-{{testoutdoor}}"></i><br>
                 </div>
             </div>
         </div>

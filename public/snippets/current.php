@@ -14,6 +14,7 @@ class CurrentSnippet implements Snippet{
 
 		$html->date             = (new Calendar($LATEST->TS))->text();
 		$html->temperature      = $LATEST->T1;
+                $html->temperatureIndoor = $LATEST->T0;
 		$html->color            = 'white';
 		$html->huminity         = $LATEST->H1;
 		$html->windspeed        = $LATEST->WS;
@@ -25,6 +26,9 @@ class CurrentSnippet implements Snippet{
 		$html->temp_min_date    = (new Calendar($STATS->minTempTS))->text();
 		$html->temp_avg         = round($STATS->meanTempVal,2);
 		$html->last_update      = 'f';
+
+		$html->testindoor       = ($LATEST->T0 == 'i') ? 'exclamation' : 'check';
+		$html->testoutdoor       = ($LATEST->T1 == 'i') ? 'exclamation' : 'check';
 
 		// some color gradient from pale-blue to red
 		$balance = map($LATEST->T1,array($STATS->minTempVal,$STATS->maxTempVal));
