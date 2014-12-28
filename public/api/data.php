@@ -5,7 +5,7 @@ include_once '../../config.system.php';
 $interval = array(
 	array(60*60*6,    60*5),   // last  6 hour -> every 5 minutes
 	array(60*60*12, 60*10),  // last 24 hour -> every 60 minutes
-    array(60*60*24, 60*30),  // last 24 hour -> every 60 minutes
+        array(60*60*24, 60*30),  // last 24 hour -> every 60 minutes
 	array(60*60*24*3, 60*60),  // last 3 days -> every 120 minutes
 	array(60*60*24*7, 60*60*6),  // last 7 days -> every 120 minutes
 	array(60*60*24*30, 60*60*12),  // last 30 days -> every 480 minutes

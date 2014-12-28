@@ -36,7 +36,7 @@ $(function() {
 });
 
 function update(el,mode){
-    mode = mode || 1;
+    mode = mode || 2;
     nvd3Charts.init(mode);
     $( ".time" ).html( $( el ).html());
 }

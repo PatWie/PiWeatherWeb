@@ -7,7 +7,7 @@ include_once LOCATION.'lib/snippet.interface.php';
 class TimeHorizont_navSnippet implements Snippet{
     public function html(){
         $str = <<<EOF
-    <li><a id="l0" href="#" onclick="update(this,1);">letzten 6 Stunde</a></li>
+    <!-- <li><a id="l0" href="#" onclick="update(this,1);">letzten 6 Stunde</a></li> -->
     <li><a id="l1" href="#" onclick="update(this,2);">letzten 12 Stunden</a></li>
     <li><a id="l2" href="#" onclick="update(this,3);">letzten 24 Stunden</a></li>
     <li><a id="l3" href="#" onclick="update(this,4);">letzte 3 Tage</a></li>

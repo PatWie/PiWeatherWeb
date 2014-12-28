@@ -176,7 +176,7 @@ var nvd3Charts = function() {
 
     return {
         init: function(mode) {
-            mode = mode || 3;
+            mode = mode || 2;
             console.log(mode);
             startCharTemperatureIndoor(mode);
             startCharHumidityIndoor(mode);
